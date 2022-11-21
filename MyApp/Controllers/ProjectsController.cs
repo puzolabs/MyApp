@@ -36,7 +36,7 @@ namespace MyApp.Controllers
         {
             _logger.LogInformation("create called");
 
-            ProjectModel model = await _projectService.Do();
+            ProjectModel model = await _projectService.Create();
             CreateProjectResponse response = _mapper.Map<ProjectModel, CreateProjectResponse>(model);
             
             return Ok(response);

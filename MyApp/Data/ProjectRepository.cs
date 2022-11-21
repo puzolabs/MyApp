@@ -7,7 +7,7 @@ namespace MyApp.Data
 {
     public interface IProjectRepository
     {
-        Task<string> Do();
+        Task<string> Create();
     }
 
     public class ProjectRepository : IProjectRepository
@@ -19,7 +19,7 @@ namespace MyApp.Data
             _database = database;
         }
 
-        public async Task<string> Do()
+        public async Task<string> Create()
         {
             return await Task.FromResult("meir");
         }
