@@ -11,7 +11,7 @@ namespace MyApp.Services
 {
     public interface IProjectService
     {
-        Task<ProjectModel> Create();
+        Task<ProjectModel> Create(string name);
     }
 
     public class ProjectService : IProjectService
@@ -30,10 +30,10 @@ namespace MyApp.Services
             _mapper = mapper;
         }
 
-        public async Task<ProjectModel> Create()
+        public async Task<ProjectModel> Create(string name)
         {
-            var name = await _projectRepository.Create();
-            return new ProjectModel() { Name = name };
+            var id = await _projectRepository.Create(name);
+            return new ProjectModel() { Id = id };
         }
     }
 }

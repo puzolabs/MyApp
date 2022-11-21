@@ -7,6 +7,6 @@ namespace MyApp.Services.Models
 {
     public class ProjectModel
     {
-        public string Name { get; set; }
+        public Guid Id { get; set; }
     }
 }

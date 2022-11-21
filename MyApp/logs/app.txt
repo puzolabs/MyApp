@@ -36,3 +36,530 @@
 21-Nov-22 12:50:02  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
 21-Nov-22 12:50:02  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
 21-Nov-22 12:50:02  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 14:34:22  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 14:34:22  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 14:34:22  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 14:34:22  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 14:34:22  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 14:34:33  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 14:34:42  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   System.Net.Sockets.SocketException (11004): The requested name is valid, but no data of the requested type was found.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostAddressesAsync>b__25_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.TaskExtensions.WithCancellation[T](Task`1 task, CancellationToken cancellationToken)
+   at Npgsql.TaskExtensions.WithTimeout[T](Task`1 task, NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+21-Nov-22 14:35:29  Information  Microsoft.Hosting.Lifetime  Application is shutting down...   
+21-Nov-22 14:36:24  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 14:36:24  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 14:36:24  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 14:36:24  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 14:36:24  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 14:36:40  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 14:36:43  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.PostgresException (0x80004005): 42601: syntax error at or near "b997887"
+
+POSITION: 39
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|211_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 48
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 49
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25
+  Exception data:
+    Severity: ERROR
+    SqlState: 42601
+    MessageText: syntax error at or near "b997887"
+    Position: 39
+    File: scan.l
+    Line: 1180
+    Routine: scanner_yyerror 
+21-Nov-22 14:37:37  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 14:38:04  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 14:38:04  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 14:38:04  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 14:38:04  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 14:38:04  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 14:38:13  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 14:38:16  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.PostgresException (0x80004005): 42P01: relation "myapp" does not exist
+
+POSITION: 13
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|211_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 48
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 49
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "myapp" does not exist
+    Position: 13
+    File: parse_relation.c
+    Line: 1376
+    Routine: parserOpenTable 
+21-Nov-22 14:39:29  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 14:39:29  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 14:39:29  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 14:39:29  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 14:39:29  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 14:39:37  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 14:39:41  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.PostgresException (0x80004005): 42P01: relation "projects" does not exist
+
+POSITION: 13
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|211_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 48
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 49
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "projects" does not exist
+    Position: 13
+    File: parse_relation.c
+    Line: 1376
+    Routine: parserOpenTable 
+21-Nov-22 14:40:39  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 14:42:03  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.PostgresException (0x80004005): 42P01: relation "projects" does not exist
+
+POSITION: 13
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|211_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 48
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 49
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "projects" does not exist
+    Position: 13
+    File: parse_relation.c
+    Line: 1376
+    Routine: parserOpenTable 
+21-Nov-22 14:55:16  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 14:55:16  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 14:55:16  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 14:55:16  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 14:55:16  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 14:55:28  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 14:55:44  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   System.Net.Sockets.SocketException (11004): The requested name is valid, but no data of the requested type was found.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostAddressesAsync>b__25_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.TaskExtensions.WithCancellation[T](Task`1 task, CancellationToken cancellationToken)
+   at Npgsql.TaskExtensions.WithTimeout[T](Task`1 task, NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+21-Nov-22 15:05:41  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 15:05:41  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 15:05:41  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 15:05:41  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 15:05:41  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 15:05:54  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 15:06:06  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): No connection could be made because the target machine actively refused it. 127.0.0.1:5432
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.<>c.<ConnectAsync>b__274_0(IAsyncResult iar)
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.TaskExtensions.WithCancellation(Task task, CancellationToken cancellationToken)
+   at Npgsql.TaskExtensions.WithTimeout(Task task, NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+21-Nov-22 15:21:05  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 15:21:05  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 15:21:05  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 15:21:05  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 15:21:05  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 15:21:18  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 15:21:30  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): No connection could be made because the target machine actively refused it. 127.0.0.1:5432
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.<>c.<ConnectAsync>b__274_0(IAsyncResult iar)
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.TaskExtensions.WithCancellation(Task task, CancellationToken cancellationToken)
+   at Npgsql.TaskExtensions.WithTimeout(Task task, NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+21-Nov-22 15:21:43  Information  Microsoft.Hosting.Lifetime  Application is shutting down...   
+21-Nov-22 15:37:38  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 15:37:38  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 15:37:38  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 15:37:38  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 15:37:38  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 15:37:47  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 15:37:53  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for user "admin"
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|211_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25
+  Exception data:
+    Severity: FATAL
+    SqlState: 28P01
+    MessageText: password authentication failed for user "admin"
+    File: auth.c
+    Line: 338
+    Routine: auth_failed 
+21-Nov-22 15:39:18  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 15:39:18  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 15:39:18  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 15:39:18  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 15:39:18  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 15:39:26  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 15:39:36  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5432
+ ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): No connection could be made because the target machine actively refused it. 127.0.0.1:5432
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.<>c.<ConnectAsync>b__274_0(IAsyncResult iar)
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.TaskExtensions.WithCancellation(Task task, CancellationToken cancellationToken)
+   at Npgsql.TaskExtensions.WithTimeout(Task task, NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+21-Nov-22 15:39:53  Information  Microsoft.Hosting.Lifetime  Application is shutting down...   
+21-Nov-22 15:41:03  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 15:41:03  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 15:41:03  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 15:41:03  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 15:41:03  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 15:41:11  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 15:41:20  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostAddressesAsync>b__25_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.TaskExtensions.WithCancellation[T](Task`1 task, CancellationToken cancellationToken)
+   at Npgsql.TaskExtensions.WithTimeout[T](Task`1 task, NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+21-Nov-22 15:41:27  Information  Microsoft.Hosting.Lifetime  Application is shutting down...   
+21-Nov-22 15:42:10  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 15:42:10  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 15:42:10  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 15:42:10  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 15:42:10  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 15:42:18  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 15:42:24  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for user "admin"
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|211_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.Internal.NpgsqlConnector.AuthenticateSASL(List`1 mechanisms, String username, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25
+  Exception data:
+    Severity: FATAL
+    SqlState: 28P01
+    MessageText: password authentication failed for user "admin"
+    File: auth.c
+    Line: 338
+    Routine: auth_failed 
+21-Nov-22 15:43:40  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 15:43:40  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 15:43:40  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 15:43:40  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 15:43:40  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 15:43:50  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 15:43:58  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.PostgresException (0x80004005): 42P01: relation "projects" does not exist
+
+POSITION: 13
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|211_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 48
+   at MyApp.Data.Database.Do(String query) in C:\Meir\MyApp\MyApp\Data\IDatabase.cs:line 49
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\Meir\MyApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\Meir\MyApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\Meir\MyApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\Meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "projects" does not exist
+    Position: 13
+    File: parse_relation.c
+    Line: 1384
+    Routine: parserOpenTable 
+21-Nov-22 15:46:18  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 15:46:18  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 15:46:18  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 15:46:18  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 15:46:18  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+21-Nov-22 15:46:25  Information  MyApp.Controllers.ProjectsController  create called   

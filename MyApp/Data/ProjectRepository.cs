@@ -7,11 +7,12 @@ namespace MyApp.Data
 {
     public interface IProjectRepository
     {
-        Task<string> Create();
+        Task<Guid> Create(string name);
     }
 
     public class ProjectRepository : IProjectRepository
     {
+        private const string TABLE_NAME = "projects";
         private readonly IDatabase _database;
 
         public ProjectRepository(IDatabase database)
@@ -19,9 +20,17 @@ namespace MyApp.Data
             _database = database;
         }
 
-        public async Task<string> Create()
+        public async Task<Guid> Create(string name)
         {
-            return await Task.FromResult("meir");
+            Guid guid = Guid.NewGuid();
+
+            var sql =
+                $"INSERT INTO {TABLE_NAME} (id, name) " +
+                $"VALUES ('{guid}', '{name}')";
+
+            await _database.Do(sql);
+
+            return guid;
         }
     }
 }
