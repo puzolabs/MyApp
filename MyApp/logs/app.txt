@@ -1,0 +1,38 @@
+08-Jul-22 17:26:06  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+08-Jul-22 17:26:06  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+08-Jul-22 17:26:06  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+08-Jul-22 17:26:06  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+08-Jul-22 17:26:06  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+08-Jul-22 17:26:42  Information  MyApp.Controllers.ProjectsController  create called   
+08-Jul-22 17:28:04  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+08-Jul-22 17:28:04  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+08-Jul-22 17:28:04  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+08-Jul-22 17:28:04  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+08-Jul-22 17:28:04  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+08-Jul-22 17:28:36  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+08-Jul-22 17:28:36  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+08-Jul-22 17:28:36  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+08-Jul-22 17:28:36  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+08-Jul-22 17:28:36  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+08-Jul-22 17:29:12  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+08-Jul-22 17:29:12  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+08-Jul-22 17:29:12  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+08-Jul-22 17:29:12  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+08-Jul-22 17:29:12  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+10-Jul-22 12:45:19  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+10-Jul-22 12:45:19  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+10-Jul-22 12:45:19  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+10-Jul-22 12:45:19  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+10-Jul-22 12:45:19  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+10-Jul-22 12:45:26  Information  MyApp.Controllers.ProjectsController  create called   
+14-Jul-22 19:46:31  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+14-Jul-22 19:46:31  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+14-Jul-22 19:46:31  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+14-Jul-22 19:46:31  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+14-Jul-22 19:46:31  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
+14-Jul-22 19:47:00  Information  MyApp.Controllers.ProjectsController  create called   
+21-Nov-22 12:50:02  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+21-Nov-22 12:50:02  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+21-Nov-22 12:50:02  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+21-Nov-22 12:50:02  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+21-Nov-22 12:50:02  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
