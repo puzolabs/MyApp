@@ -62,6 +62,9 @@ namespace MyApp.Data
 
         public async Task<IEnumerable<T>> QueryAsync<T>(string query)
         {
+            if (!_opened)
+                await Open();
+
             return await _connection.QueryAsync<T>(query);
         }
     }

@@ -13,6 +13,7 @@ using System.Net;
 using Microsoft.Extensions.Configuration;
 using AutoMapper;
 using MyApp.Services.Models;
+using System.Threading.Tasks;
 
 namespace MyApp.Controllers
 {
@@ -40,17 +41,15 @@ namespace MyApp.Controllers
         [AllowAnonymous]
         [Route("login")]
         [HttpPost]
-        [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(CreateProjectResponse))]
+        [SwaggerResponse((int)HttpStatusCode.OK, Type = typeof(IActionResult))]
         [SwaggerResponse((int)HttpStatusCode.Unauthorized, Type = typeof(ErrorResponse))]
-        public async System.Threading.Tasks.Task<IActionResult> Login(LoginUserRequest loginUserRequest)
+        public async Task<IActionResult> Login(LoginUserRequest loginUserRequest)
         {
             var validUser = await _userService.Get(loginUserRequest.UserName, loginUserRequest.Password);
 
             if (validUser == null)
                 return Unauthorized();
 
-            //var user = _mapper.Map<UserModel>(validUser);
-            
             string generatedToken = _tokenService.BuildToken(_config["Jwt:Key"].ToString(), _config["Jwt:Issuer"].ToString(), _config["Jwt:Audience"].ToString(), validUser);
 
             if (generatedToken == null)

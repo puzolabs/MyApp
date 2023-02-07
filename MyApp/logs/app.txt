@@ -1233,3 +1233,41 @@ MyApp.Data.Models.UserDto -> MyApp.Services.Models.UserModel
    at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
    at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
 07-Feb-23 11:14:57  Information  MyApp.Controllers.ProjectsController  create called   
+07-Feb-23 11:31:12  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 11:31:12  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 11:31:12  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 11:31:12  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 11:31:12  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MyApp\MyApp   
+07-Feb-23 11:31:22  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 11:32:01  Information  MyApp.Controllers.ProjectsController  create called   
+07-Feb-23 18:21:04  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 18:21:04  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 18:21:04  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 18:21:04  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 18:21:04  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MyApp\MyApp   
+07-Feb-23 18:21:05  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 18:21:05  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 18:21:05  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 18:21:06  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 18:21:06  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 18:21:24  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 18:21:24  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 18:21:24  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 18:21:24  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 18:21:24  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MyApp\MyApp   
+07-Feb-23 18:21:32  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MyApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 18:22:14  Information  MyApp.Controllers.ProjectsController  create called   
