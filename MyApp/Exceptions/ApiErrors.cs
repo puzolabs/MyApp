@@ -12,6 +12,7 @@ namespace MyApp.Exceptions
             { ApiErrorCode.AlreadyExists, "{0} already exists" },
             { ApiErrorCode.MissingValue, "'{0}' is required" },
             { ApiErrorCode.InvalidValue, "'{0}': invalid value" },
+            { ApiErrorCode.Unauthorized, "unauthorized access" },
         };
         
         public static IReadOnlyDictionary<ApiErrorCode, string> Map => ErrorCodeToMessageMap;

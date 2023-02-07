@@ -15,6 +15,8 @@
         //Conflict
         AlreadyExists = 5200,
         InvalidUsernameOrPassword = 5201,
-        UserHasNoDomains = 5202
+        UserHasNoDomains = 5202,
+
+        Unauthorized = 5300,
     }
 }

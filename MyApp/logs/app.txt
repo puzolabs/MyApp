@@ -563,3 +563,673 @@ POSITION: 13
 21-Nov-22 15:46:18  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
 21-Nov-22 15:46:18  Information  Microsoft.Hosting.Lifetime  Content root path: C:\Meir\MyApp\MyApp   
 21-Nov-22 15:46:25  Information  MyApp.Controllers.ProjectsController  create called   
+05-Feb-23 09:24:50  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 09:24:50  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 09:24:50  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 09:24:50  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 09:24:50  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 09:25:24  Information  MyApp.Controllers.ProjectsController  create called   
+05-Feb-23 09:25:29  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5433
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Npgsql.TaskExtensions.ExecuteWithTimeout(Func`2 func, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\meir\MySecuredApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\meir\MySecuredApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\meir\MySecuredApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\meir\MySecuredApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\meir\MySecuredApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 09:26:06  Information  MyApp.Controllers.ProjectsController  create called   
+05-Feb-23 09:26:10  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   Npgsql.NpgsqlException (0x80004005): Failed to connect to 127.0.0.1:5433
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Npgsql.TaskExtensions.ExecuteWithTimeout(Func`2 func, NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|191_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.ConnectorPool.<Get>g__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)
+   at MyApp.Data.Database.Open() in C:\meir\MySecuredApp\MyApp\Data\IDatabase.cs:line 30
+   at MyApp.Data.Database.Do(String query) in C:\meir\MySecuredApp\MyApp\Data\IDatabase.cs:line 44
+   at MyApp.Data.ProjectRepository.Create(String name) in C:\meir\MySecuredApp\MyApp\Data\ProjectRepository.cs:line 31
+   at MyApp.Services.ProjectService.Create(String name) in C:\meir\MySecuredApp\MyApp\Services\ProjectService.cs:line 35
+   at MyApp.Controllers.ProjectsController.Create(CreateProjectRequest request) in C:\meir\MySecuredApp\MyApp\Controllers\ProjectsController.cs:line 39
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 09:26:57  Information  MyApp.Controllers.ProjectsController  create called   
+05-Feb-23 09:28:40  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 09:28:40  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 09:28:40  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 09:28:40  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 09:28:40  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 09:29:00  Information  MyApp.Controllers.ProjectsController  create called   
+05-Feb-23 09:29:22  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 09:29:22  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 09:29:22  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 09:29:22  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 09:29:22  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 09:29:40  Information  MyApp.Controllers.ProjectsController  create called   
+05-Feb-23 09:30:27  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 09:30:27  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 09:30:27  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 09:30:27  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 09:30:27  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 09:30:37  Information  MyApp.Controllers.ProjectsController  create called   
+05-Feb-23 09:32:47  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 09:32:47  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 09:32:47  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 09:32:47  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 09:32:47  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 09:32:56  Information  MyApp.Controllers.ProjectsController  create called   
+05-Feb-23 09:34:37  Critical  Microsoft.AspNetCore.Hosting.Diagnostics  Application startup exception  System.InvalidOperationException: Cannot resolve scoped service 'MyApp.Services.ITokenService' from root provider.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateResolution(Type serviceType, IServiceScope scope, IServiceScope rootScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken) 
+05-Feb-23 10:22:13  Critical  Microsoft.AspNetCore.Hosting.Diagnostics  Application startup exception  System.InvalidOperationException: Cannot resolve scoped service 'MyApp.Services.ITokenService' from root provider.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateResolution(Type serviceType, IServiceScope scope, IServiceScope rootScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken) 
+05-Feb-23 10:23:33  Critical  Microsoft.AspNetCore.Hosting.Diagnostics  Application startup exception  System.InvalidOperationException: Cannot resolve scoped service 'MyApp.Services.ITokenService' from root provider.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateResolution(Type serviceType, IServiceScope scope, IServiceScope rootScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken) 
+05-Feb-23 10:26:46  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:26:46  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:26:46  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:26:46  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:26:46  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:27:01  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 32
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:27:07  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 32
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:27:20  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:27:20  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:27:20  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:27:20  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:27:20  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:27:23  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 32
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:27:24  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 32
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:27:48  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:27:48  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:27:48  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:27:48  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:27:48  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:37:29  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:37:29  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:37:29  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:37:29  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:37:29  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:37:33  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 36
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:37:45  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:37:45  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:37:45  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:37:45  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:37:45  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:40:40  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:40:40  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:40:40  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:40:40  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:40:40  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:41:05  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:46:28  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:46:28  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:46:28  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:46:28  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:46:28  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:46:37  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 41
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:48:20  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:48:20  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:48:20  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:48:20  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:48:20  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:48:28  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.Collections.Generic.KeyNotFoundException: The given key 'Unauthorized' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MyApp.Base.Exceptions.ApiException.GetErrorMessage(ApiErrorCode errorCode, Object[] messageParams) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ApiException.cs:line 37
+   at MyApp.Base.Exceptions.ApiException..ctor(ApiErrorCode errorCode, Object[] messageParams) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ApiException.cs:line 16
+   at MyApp.Exceptions.UnauthorizedException..ctor(String entityType, Object entityIdentifier) in C:\meir\MySecuredApp\MyApp\Exceptions\UnauthorizedException.cs:line 9
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:50:12  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:50:12  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:50:12  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:50:12  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:50:12  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:50:22  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:52:37  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:53:36  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:53:36  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:53:36  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:53:36  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:53:36  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:53:46  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:54:29  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:54:29  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:54:29  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:54:29  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:54:29  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:54:39  Error  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware  An unhandled exception has occurred while executing the request.  System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context) 
+05-Feb-23 10:55:51  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:55:51  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:55:51  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:55:51  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:55:51  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:56:05  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 42
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 10:58:22  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:58:22  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:58:22  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:58:22  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:58:22  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:58:32  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 42
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 10:58:47  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 42
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 10:59:29  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 10:59:29  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 10:59:29  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 10:59:29  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 10:59:29  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 10:59:47  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 43
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 11:01:00  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 11:01:00  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 11:01:00  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 11:01:00  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 11:01:00  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 11:34:28  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 11:34:28  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 11:34:28  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 11:34:28  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 11:34:28  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 11:35:09  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 43
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 11:35:35  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 43
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 11:39:57  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 43
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 11:43:51  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 11:43:51  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 11:43:51  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 11:43:51  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 11:43:51  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 11:45:06  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 43
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 11:46:05  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 43
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 11:53:41  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 11:53:41  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 11:53:41  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 11:53:41  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 11:53:41  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 14:57:21  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 14:57:21  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 14:57:21  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 14:57:21  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 14:57:21  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 14:57:26  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 48
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:57:27  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 48
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:57:37  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 14:57:37  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 14:57:37  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 14:57:37  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 14:57:37  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 14:57:38  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 48
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:57:38  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 48
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:57:49  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 14:57:49  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 14:57:49  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 14:57:49  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 14:57:49  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 14:57:49  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 48
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:57:50  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 48
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:58:00  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 14:58:00  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 14:58:00  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 14:58:00  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 14:58:00  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 14:58:47  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 14:58:47  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 14:58:47  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 14:58:47  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 14:58:47  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 14:59:06  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:06  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:06  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:07  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:07  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:20  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:20  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:20  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:20  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:21  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:35  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 14:59:35  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 14:59:35  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 14:59:35  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 14:59:35  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 14:59:36  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:36  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:36  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:37  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:37  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+05-Feb-23 14:59:50  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+05-Feb-23 14:59:50  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+05-Feb-23 14:59:50  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+05-Feb-23 14:59:50  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+05-Feb-23 14:59:50  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+05-Feb-23 15:00:41  Information  MyApp.Controllers.ProjectsController  create called   
+06-Feb-23 15:03:53  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+06-Feb-23 15:04:31  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+06-Feb-23 15:06:29  Information  MyApp.Controllers.ProjectsController  create called   
+07-Feb-23 10:46:27  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 10:46:27  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 10:46:27  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 10:46:27  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 10:46:27  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+07-Feb-23 10:46:28  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:46:28  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:46:28  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:46:29  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:46:29  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:50:10  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 10:50:10  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 10:50:10  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 10:50:10  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 10:50:10  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+07-Feb-23 10:50:11  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:50:11  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:50:11  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:50:12  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:50:12  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:50:21  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 10:50:21  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 10:50:21  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 10:50:21  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 10:50:21  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+07-Feb-23 10:50:32  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:50:53  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   System.InvalidOperationException: Unable to resolve service for type 'MyApp.Services.IUserService' while attempting to activate 'MyApp.Controllers.AuthController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:51:13  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   System.InvalidOperationException: Unable to resolve service for type 'MyApp.Services.IUserService' while attempting to activate 'MyApp.Controllers.AuthController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:52:59  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 10:52:59  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 10:52:59  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 10:52:59  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 10:52:59  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+07-Feb-23 10:53:11  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:53:43  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> UserModel
+System.Object -> MyApp.Services.Models.UserModel
+   at lambda_method10(Closure, Object, UserModel, ResolutionContext)
+   at MyApp.Services.UserService.Get(String username, String password) in C:\meir\MySecuredApp\MyApp\Services\UserService.cs:line 33
+   at MyApp.Controllers.AuthController.Login(LoginUserRequest loginUserRequest) in C:\meir\MySecuredApp\MyApp\Controllers\AuthController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:54:39  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> UserModel
+System.Object -> MyApp.Services.Models.UserModel
+   at lambda_method10(Closure, Object, UserModel, ResolutionContext)
+   at MyApp.Services.UserService.Get(String username, String password) in C:\meir\MySecuredApp\MyApp\Services\UserService.cs:line 33
+   at MyApp.Controllers.AuthController.Login(LoginUserRequest loginUserRequest) in C:\meir\MySecuredApp\MyApp\Controllers\AuthController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 10:55:53  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> UserModel
+System.Object -> MyApp.Services.Models.UserModel
+   at lambda_method10(Closure, Object, UserModel, ResolutionContext)
+   at MyApp.Services.UserService.Get(String username, String password) in C:\meir\MySecuredApp\MyApp\Services\UserService.cs:line 33
+   at MyApp.Controllers.AuthController.Login(LoginUserRequest loginUserRequest) in C:\meir\MySecuredApp\MyApp\Controllers\AuthController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 11:10:14  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 11:10:14  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 11:10:14  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 11:10:14  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 11:10:14  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+07-Feb-23 11:10:31  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 11:11:03  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.MissingValueException: 'UserName' is required
+   at MyApp.Contracts.Validators.LoginUserRequestValidator.<>c.<.ctor>b__0_1(LoginUserRequest x) in C:\meir\MySecuredApp\MyApp\Contracts\Validators\LoginUserRequestValidator.cs:line 16
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass39_0`2.<OnFailure>b__0(T instance, ValidationContext`1 _, TProperty _, String _) in /home/jskinner/code/FluentValidation/src/FluentValidation/DefaultValidatorOptions.cs:line 567
+   at FluentValidation.Internal.PropertyRule`2.InvokePropertyValidator(ValidationContext`1 context, Lazy`1 accessor, String propertyName, RuleComponent`2 component) in /home/jskinner/code/FluentValidation/src/FluentValidation/Internal/PropertyRule.cs:line 254
+   at FluentValidation.Internal.PropertyRule`2.Validate(ValidationContext`1 context) in /home/jskinner/code/FluentValidation/src/FluentValidation/Internal/PropertyRule.cs:line 128
+   at FluentValidation.AbstractValidator`1.Validate(ValidationContext`1 context) in /home/jskinner/code/FluentValidation/src/FluentValidation/AbstractValidator.cs:line 96
+   at FluentValidation.AbstractValidator`1.FluentValidation.IValidator.Validate(IValidationContext context) in /home/jskinner/code/FluentValidation/src/FluentValidation/AbstractValidator.cs:line 48
+   at FluentValidation.AspNetCore.FluentValidationModelValidator.Validate(ModelValidationContext mvContext) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationModelValidatorProvider.cs:line 113
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.ValidateNode()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>n__1(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>c__DisplayClass2_0.<Validate>g__BaseValidate|0() in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 44
+   at FluentValidation.AspNetCore.FluentValidationVisitor.ValidateInternal(ModelMetadata metadata, String key, Object model, Func`1 continuation) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 62
+   at FluentValidation.AspNetCore.FluentValidationVisitor.Validate(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 46
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 11:11:38  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.MissingValueException: 'Password' is required
+   at MyApp.Contracts.Validators.LoginUserRequestValidator.<>c.<.ctor>b__0_3(LoginUserRequest x) in C:\meir\MySecuredApp\MyApp\Contracts\Validators\LoginUserRequestValidator.cs:line 20
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass39_0`2.<OnFailure>b__0(T instance, ValidationContext`1 _, TProperty _, String _) in /home/jskinner/code/FluentValidation/src/FluentValidation/DefaultValidatorOptions.cs:line 567
+   at FluentValidation.Internal.PropertyRule`2.InvokePropertyValidator(ValidationContext`1 context, Lazy`1 accessor, String propertyName, RuleComponent`2 component) in /home/jskinner/code/FluentValidation/src/FluentValidation/Internal/PropertyRule.cs:line 254
+   at FluentValidation.Internal.PropertyRule`2.Validate(ValidationContext`1 context) in /home/jskinner/code/FluentValidation/src/FluentValidation/Internal/PropertyRule.cs:line 128
+   at FluentValidation.AbstractValidator`1.Validate(ValidationContext`1 context) in /home/jskinner/code/FluentValidation/src/FluentValidation/AbstractValidator.cs:line 96
+   at FluentValidation.AbstractValidator`1.FluentValidation.IValidator.Validate(IValidationContext context) in /home/jskinner/code/FluentValidation/src/FluentValidation/AbstractValidator.cs:line 48
+   at FluentValidation.AspNetCore.FluentValidationModelValidator.Validate(ModelValidationContext mvContext) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationModelValidatorProvider.cs:line 113
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.ValidateNode()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>n__1(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>c__DisplayClass2_0.<Validate>g__BaseValidate|0() in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 44
+   at FluentValidation.AspNetCore.FluentValidationVisitor.ValidateInternal(ModelMetadata metadata, String key, Object model, Func`1 continuation) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 62
+   at FluentValidation.AspNetCore.FluentValidationVisitor.Validate(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 46
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 11:11:48  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.MissingValueException: 'Password' is required
+   at MyApp.Contracts.Validators.LoginUserRequestValidator.<>c.<.ctor>b__0_3(LoginUserRequest x) in C:\meir\MySecuredApp\MyApp\Contracts\Validators\LoginUserRequestValidator.cs:line 20
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass39_0`2.<OnFailure>b__0(T instance, ValidationContext`1 _, TProperty _, String _) in /home/jskinner/code/FluentValidation/src/FluentValidation/DefaultValidatorOptions.cs:line 567
+   at FluentValidation.Internal.PropertyRule`2.InvokePropertyValidator(ValidationContext`1 context, Lazy`1 accessor, String propertyName, RuleComponent`2 component) in /home/jskinner/code/FluentValidation/src/FluentValidation/Internal/PropertyRule.cs:line 254
+   at FluentValidation.Internal.PropertyRule`2.Validate(ValidationContext`1 context) in /home/jskinner/code/FluentValidation/src/FluentValidation/Internal/PropertyRule.cs:line 128
+   at FluentValidation.AbstractValidator`1.Validate(ValidationContext`1 context) in /home/jskinner/code/FluentValidation/src/FluentValidation/AbstractValidator.cs:line 96
+   at FluentValidation.AbstractValidator`1.FluentValidation.IValidator.Validate(IValidationContext context) in /home/jskinner/code/FluentValidation/src/FluentValidation/AbstractValidator.cs:line 48
+   at FluentValidation.AspNetCore.FluentValidationModelValidator.Validate(ModelValidationContext mvContext) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationModelValidatorProvider.cs:line 113
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.ValidateNode()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>n__1(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container)
+   at FluentValidation.AspNetCore.FluentValidationVisitor.<>c__DisplayClass2_0.<Validate>g__BaseValidate|0() in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 44
+   at FluentValidation.AspNetCore.FluentValidationVisitor.ValidateInternal(ModelMetadata metadata, String key, Object model, Func`1 continuation) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 62
+   at FluentValidation.AspNetCore.FluentValidationVisitor.Validate(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container) in /home/jskinner/code/FluentValidation/src/FluentValidation.AspNetCore/FluentValidationVisitor.cs:line 46
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 11:11:57  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Unexpected error occurred:   AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UserDto -> UserModel
+MyApp.Data.Models.UserDto -> MyApp.Services.Models.UserModel
+   at lambda_method12(Closure, UserDto, UserModel, ResolutionContext)
+   at MyApp.Services.UserService.Get(String username, String password) in C:\meir\MySecuredApp\MyApp\Services\UserService.cs:line 34
+   at MyApp.Controllers.AuthController.Login(LoginUserRequest loginUserRequest) in C:\meir\MySecuredApp\MyApp\Controllers\AuthController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 53
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 11:14:06  Information  Microsoft.Hosting.Lifetime  Now listening on: https://localhost:5001   
+07-Feb-23 11:14:06  Information  Microsoft.Hosting.Lifetime  Now listening on: http://localhost:5000   
+07-Feb-23 11:14:06  Information  Microsoft.Hosting.Lifetime  Application started. Press Ctrl+C to shut down.   
+07-Feb-23 11:14:06  Information  Microsoft.Hosting.Lifetime  Hosting environment: Development   
+07-Feb-23 11:14:06  Information  Microsoft.Hosting.Lifetime  Content root path: C:\meir\MySecuredApp\MyApp   
+07-Feb-23 11:14:33  Error  MyApp.Base.Exceptions.ExceptionsMiddleware  Api exception error occurred  MyApp.Exceptions.UnauthorizedException: unauthorized access
+   at MyApp.Auth.AuthMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Auth\AuthMiddleware.cs:line 49
+   at MyApp.Base.Exceptions.ExceptionsMiddleware.InvokeAsync(HttpContext httpContext) in C:\meir\MySecuredApp\MyApp\Exceptions\Base\ExceptionsMiddleware.cs:line 25 
+07-Feb-23 11:14:57  Information  MyApp.Controllers.ProjectsController  create called   
